@@ -10,7 +10,7 @@
 angular.module('dengluApp')
   .controller('main',['$scope','$http','$state','$cookies','$cookieStore',function ($scope,$http,$state,$cookies,$cookieStore) {
      if($cookies.get('usernam',$scope.updata)){
-		$state.go('suc')
+		$state.go('note')
 	}
      $scope.denglu=function(){
      	$http({
@@ -19,7 +19,7 @@ angular.module('dengluApp')
 		data:$scope.updata
 	}).success(function(e){
 //		debugger
-       	$state.go('suc')
+       	$state.go('note')
        	if($scope.check==true){
 				$cookieStore.put("usernam",$scope.updata);				
 				var expireDate = new Date();

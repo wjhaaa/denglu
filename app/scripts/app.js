@@ -20,6 +20,10 @@ angular
 				url:'/zhuce',
 				templateUrl:'views/about.html',
 				controller:'about'
+			}).state('note',{
+				url:'/note',
+				templateUrl:'views/note.html',
+				controller:'note'
 			}).state('suc',{
 				url:'/suc',
 				templateUrl:'views/success.html',
