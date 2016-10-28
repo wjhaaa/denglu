@@ -18,8 +18,9 @@ angular.module('dengluApp')
 		method:"post",
 		data:$scope.updata
 	}).success(function(e){
-//		debugger
-       	$state.go('note')
+//		debugger 	
+       $cookieStore.put("uid",e.uid)
+       $state.go('note')
        	if($scope.check==true){
 				$cookieStore.put("usernam",$scope.updata);				
 				var expireDate = new Date();

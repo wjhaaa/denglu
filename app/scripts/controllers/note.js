@@ -1,6 +1,8 @@
 angular.module('dengluApp')
   .controller('note',['$scope','$http','$state','$cookies','$cookieStore',function ($scope,$http,$state,$cookies,$cookieStore) {
      	var num=0;
+     	var qwe=$cookieStore.get('uid')
+	    $scope.adddata={"uid":qwe}
      	$scope.edit=function(e){
 		     $scope.editdata=e
 	   }
@@ -14,6 +16,7 @@ angular.module('dengluApp')
 		})
 	}
      $scope.add=function(){
+     	
 		$http({
 			url:"http://www.somenote.cn:1510/item",
 			method:"POST",
@@ -55,23 +58,11 @@ angular.module('dengluApp')
     $http({
 		url:"http://www.somenote.cn:1510/item",
 		method:"get",
-		params:{"$skip":num,"$limit":10}
+		params:{"$skip":num,"$limit":10,"uid":$cookieStore.get('uid')}
+		
 	}).success(function(e){
 		$scope.data=e
 		
 	})
-	
-//	$scope.m=function(s){
-//		$http({
-//			url:"http://www.somenote.cn:1510/item",
-//		    method:"get",
-//		    data:{
-//		    	"$skip":s,
-//		    	"$limit":10
-//		    }
-//		})
-//	}
-//	if(data&&data.length>10){
-//		
-//	}
+
   }]);

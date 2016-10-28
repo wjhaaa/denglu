@@ -1,5 +1,5 @@
 'use strict';
-
+  var abc=""
 /**
  * @ngdoc overview
  * @name dengluApp
@@ -10,7 +10,7 @@
  */
 angular
   .module('dengluApp', ["ui.router","ngCookies"]).controller('con',['$scope','$http',function ($scope,$http) {
-	     
+	  
 	}]).config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider){
 			$stateProvider.state('index',{
 				url:'/denglu',
