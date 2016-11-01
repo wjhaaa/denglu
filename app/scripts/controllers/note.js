@@ -16,7 +16,6 @@ angular.module('dengluApp')
 		})
 	}
      $scope.add=function(){
-     	
 		$http({
 			url:"http://www.somenote.cn:1510/item",
 			method:"POST",
@@ -54,13 +53,14 @@ angular.module('dengluApp')
 			$scope.data=e
 		})
 	}
-
+		
     $http({
 		url:"http://www.somenote.cn:1510/item",
 		method:"get",
 		params:{"$skip":num,"$limit":10,"uid":$cookieStore.get('uid')}
 		
-	}).success(function(e){
+	}).success(function(e){	
+		debugger
 		$scope.data=e
 		
 	})

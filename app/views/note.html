@@ -2,11 +2,10 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
         <p>
-        	<input type="text" class="form-control" placeholder="title" ng-model="adddata.title"/>
+        	<input type="text" class="form-control" placeholder="title" ng-model="adddata.title" required/>
         </p>
         <p>
-        	<input type="text" class="form-control" placeholder="content" ng-model="adddata.content"/>
-
+        	<input type="text" class="form-control" placeholder="content" ng-model="adddata.content" required/>
         </p>
          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="add()">确定添加</button>
     </div>
@@ -39,7 +38,6 @@
     </div>
  		<span class="glyphicon glyphicon-remove" ng-click="del(x)"></span>
   </div>
-  
 </div>
 
 
